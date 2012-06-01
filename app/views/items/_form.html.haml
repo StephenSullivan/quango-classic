@@ -30,6 +30,15 @@
       = "If your title is longer than this text box, then chances are your title is too long..!"
     .clear
 
+    %br
+
+    = f.label :redirect_url, "",:class=>"label"
+    .group{:style=>"width:584px;padding:8px; background:#bcbcbc;border-radius:4px;"}
+      = f.text_field :redirect_url, :class => "text_field", :style => "width:556px; max-width:556px; margin:0 ;"
+    .clear
+
+    = f.check_box :use_redirect_url
+    = f.label :use_redirect_url
 
 
     .group

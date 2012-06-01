@@ -463,7 +463,7 @@ class ItemsController < ApplicationController
   # POST /items.xml
   def create
     @item = Item.new(params[:item])
-    @item.safe_update(%w[doctype_id section node mode title description bookmark video_link article_link main_image main_thumbnail images body language tags wiki anonymous anonymous_email anonymous_display_name meta_author], params[:item])
+    @item.safe_update(%w[use_redirect_url redirect_url doctype_id section node mode title description bookmark video_link article_link main_image main_thumbnail images body language tags wiki anonymous anonymous_email anonymous_display_name meta_author], params[:item])
     @item.group = current_group
     @item.user = current_user
 
@@ -639,7 +639,7 @@ class ItemsController < ApplicationController
   # PUT /items/1.xml
   def update
     respond_to do |format|
-      @item.safe_update(%w[meta_author category doctype_id node mode title description bookmark video_link main_thumbnail images body language tags wiki adult_content version_message anonymous article_link article_link_author article_link_publisher], params[:item])
+      @item.safe_update(%w[use_redirect_url redirect_url meta_author category doctype_id node mode title description bookmark video_link main_thumbnail images body language tags wiki adult_content version_message anonymous article_link article_link_author article_link_publisher], params[:item])
       @item.updated_by = current_user
       @item.last_target = @item
       #@item.section = @active_section

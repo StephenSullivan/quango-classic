@@ -114,6 +114,9 @@ class Item
   key :last_target_id, String
   key :last_target_date, Time
 
+  key :use_redirect_url, Boolean, :default => false
+  key :redirect_url, String
+
   belongs_to :last_target, :polymorphic => true
 
   has_many :distributors, :dependent => :destroy
